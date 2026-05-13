@@ -155,7 +155,7 @@ All models benefit from the skew toward 4- and 5-star reviews, since predicting 
 When approaching a text classification task:
 
 1. **Try direct LLM inference first.** Zero-shot performance from a capable model is often surprisingly strong and requires no labeled data or training infrastructure.
-2. **If direct inference is too slow or expensive at scale,** use the LLM to extract task-specific features from text, then train a lightweight classifier on those features. This approach outperformed 384-dimensional general embeddings by a wide margin here.
+2. **If direct inference is ineffective because it is outside of the range of the LLM's expertise,** use the LLM to extract generic features that don't require special knowledge, but are related to the task, then train a lightweight classifier on those features. This approach outperformed 384-dimensional general embeddings by a wide margin here.
 3. **General-purpose embeddings + classical ML** remain a solid baseline, but are outclassed when the LLM's domain understanding can be leveraged more directly.
 
 ---
